@@ -2,10 +2,10 @@
   <span>MindMirror</span>
   <span class="example-spacer"></span>
   <button mat-button>
-    <a href="http://">Home</a>
+    <a href="">Home</a>
   </button>
   <button mat-button>
-    <a href="http://">Create New Journal</a>
+    <a href="create-new-journal">Create New Journal</a>
   </button>
   <button mat-button>
     <a href="http://">My Journal</a>
@@ -15,16 +15,16 @@
   </button>
 </mat-toolbar>
 
-<div class="menutoggle" >
+<div class="menutoggle">
   <mat-icon (click)="toggleMenu()">reorder</mat-icon>
 
   <mat-toolbar class="menutoggle" *ngIf="menu" [@slideAnimation]>
     <span>MindMirror</span>
     <button mat-button>
-      <a href="http://">Home</a>
+      <a href="">Home</a>
     </button>
     <button mat-button>
-      <a href="http://">Create New Journal</a>
+      <a href="create-new-journal">Create New Journal</a>
     </button>
     <button mat-button>
       <a href="http://">My Journal</a>

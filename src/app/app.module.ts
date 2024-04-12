@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
 import { AngularFireModule } from '@angular/fire/compat';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
@@ -18,19 +19,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CreateNewJournalComponent } from './pages/create-new-journal/create-new-journal.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { firebaseConfig } from './environment/environment';
+import { firebaseConfig } from '../environment/environment';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    HeaderComponent,
+    CreateNewJournalComponent,
+  ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatExpansionModule,
     AngularFireModule.initializeApp(firebaseConfig),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
@@ -40,6 +40,14 @@ import { firebaseConfig } from './environment/environment';
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
