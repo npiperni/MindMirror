@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 import { CreateNewJournalComponent } from './pages/create-new-journal/create-new-journal.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { firebaseConfig } from '../environment/environment';
@@ -29,6 +31,7 @@ import { firebaseConfig } from '../environment/environment';
     LandingComponent,
     HeaderComponent,
     CreateNewJournalComponent,
+    SignUpComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -47,6 +50,7 @@ import { firebaseConfig } from '../environment/environment';
     MatIconModule,
     MatButtonModule,
     MatExpansionModule,
+    FormsModule,
     MatCardModule,
   ],
   providers: [],
