@@ -1,18 +1,36 @@
-<mat-toolbar>
+<mat-toolbar class="youpi">
   <span>MindMirror</span>
   <span class="example-spacer"></span>
-  <button mat-button >
+  <button mat-button>
     <a href="http://">Home</a>
   </button>
-    <button mat-button >
+  <button mat-button>
     <a href="http://">Create New Journal</a>
   </button>
-    <button mat-button >
+  <button mat-button>
     <a href="http://">My Journal</a>
-    </button>
-    <button mat-button >
+  </button>
+  <button mat-button>
     <a href="http://">Profile</a>
-    </button>
+  </button>
 </mat-toolbar>
 
+<div class="menutoggle" >
+  <mat-icon (click)="toggleMenu()">reorder</mat-icon>
 
+  <mat-toolbar class="menutoggle" *ngIf="menu" [@slideAnimation]>
+    <span>MindMirror</span>
+    <button mat-button>
+      <a href="http://">Home</a>
+    </button>
+    <button mat-button>
+      <a href="http://">Create New Journal</a>
+    </button>
+    <button mat-button>
+      <a href="http://">My Journal</a>
+    </button>
+    <button mat-button>
+      <a href="http://">Profile</a>
+    </button>
+  </mat-toolbar>
+</div>
