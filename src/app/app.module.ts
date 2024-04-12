@@ -11,9 +11,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './components/header/header.component';
+import { JournalCardComponent } from './components/journal-card/journal-card.component';
+import { MyJournalComponent } from './pages/my-journal/my-journal.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, HeaderComponent],
+  declarations: [
+    AppComponent, 
+    LandingComponent, 
+    HeaderComponent, 
+    JournalCardComponent, 
+    MyJournalComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
