@@ -1,6 +1,6 @@
 .my-journal-cards{
     margin:auto;
-    width: 90%;
+    width: 95%;
     padding: 20px;
 }
 
@@ -12,4 +12,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#title{
+    color: #301DAD;
+}
+
+.text{
+    font-family: "Sanchez", serif;
 }
