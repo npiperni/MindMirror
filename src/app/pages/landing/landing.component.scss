@@ -16,3 +16,9 @@ h1{
     padding: 3vw;
     line-height: 1.4;
 }
+
+@media (max-width: 768px){
+    h1{
+        font-size: 3em;
+    }
+}

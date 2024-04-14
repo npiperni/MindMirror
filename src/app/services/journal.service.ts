@@ -1,16 +1,71 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { Journal } from '../models/journals';
+import { Journal, PrivacyEnum } from '../models/journals';
+import {
+  equalTo,
+  get,
+  getDatabase,
+  orderByChild,
+  query,
+  ref,
+} from 'firebase/database';
+import { UserDTO } from '../models/users';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JournalService {
+  constructor(private db: AngularFireDatabase) {}
 
-  constructor(private db: AngularFireDatabase) { }
-
-  uploadJournalEntry(entry: Journal): void {
-    console.log('Inside Service: Uploading Journal Entry')
+  async uploadJournalEntry(entry: Journal) {
     this.db.list('journal entries').push(entry);
+  }
+
+  async getMyJournalEntries(userId: string) {
+    const db = getDatabase();
+    const journalRef = ref(db, 'journal entries');
+    const snapshot = await get(journalRef);
+    const journalNodeExists = snapshot.exists();
+
+    if (!journalNodeExists) {
+      return false;
+    }
+
+    const journalsQuery = query(
+      journalRef,
+      orderByChild('UserID'),
+      equalTo(userId)
+    );
+    const JournalsSnapshot = await get(journalsQuery);
+    const myJournalEntries = JournalsSnapshot.val();
+    return myJournalEntries;
+  }
+
+  async getFeed(user: UserDTO) {
+    const db = getDatabase();
+    const journalRef = ref(db, 'journal entries');
+
+    const userJournalEntries = this.getMyJournalEntries(user.ID);
+
+    let friendJournalEntries = {};
+    for (const friendID of user.Friends) {
+      const friendJournalQuery = query(
+        journalRef,
+        orderByChild('UserID'),
+        equalTo(friendID),
+        orderByChild('Privacy'),
+        equalTo(PrivacyEnum.Public)
+      );
+      const friendJournalSnapshot = await get(friendJournalQuery);
+      const entries = friendJournalSnapshot.val();
+      friendJournalEntries = { ...friendJournalEntries, ...entries };
+    }
+
+    const myFeed = {
+      ...userJournalEntries,
+      ...friendJournalEntries,
+    };
+
+    return myFeed;
   }
 }

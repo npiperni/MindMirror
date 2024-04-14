@@ -14,16 +14,16 @@ import { UserDTO } from 'src/app/models/users';
     trigger('slideAnimation', [
       /* scale */
       transition('void => *', [
-        useAnimation(scaleIn, { params: { time: '1000ms' } }),
+        useAnimation(scaleIn, { params: { time: '500ms' } }),
       ]),
       transition('* => void', [
-        useAnimation(scaleOut, { params: { time: '1000ms' } }),
+        useAnimation(scaleOut, { params: { time: '500ms' } }),
       ]),
     ]),
   ],
 })
 export class HeaderComponent {
-  menu = true;
+  menu = false; // Menu is closed by default
   userSubscription: Subscription = new Subscription();
   myUser!: UserDTO;
 
