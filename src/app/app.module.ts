@@ -24,6 +24,10 @@ import { FormsModule } from '@angular/forms';
 import { CreateNewJournalComponent } from './pages/create-new-journal/create-new-journal.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { firebaseConfig } from '../environment/environment';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { firebaseConfig } from '../environment/environment';
     HeaderComponent,
     CreateNewJournalComponent,
     SignUpComponent,
+    VerifyEmailComponent,
+    LoginComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -52,6 +58,8 @@ import { firebaseConfig } from '../environment/environment';
     MatExpansionModule,
     FormsModule,
     MatCardModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

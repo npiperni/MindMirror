@@ -1,18 +1,27 @@
 <mat-toolbar class="youpi">
   <span>MindMirror</span>
   <span class="example-spacer"></span>
-  <button mat-button>
-    <a href="">Home</a>
-  </button>
-  <button mat-button>
-    <a href="create-new-journal">Create New Journal</a>
-  </button>
-  <button mat-button>
-    <a href="http://">My Journal</a>
-  </button>
-  <button mat-button>
-    <a href="http://">Profile</a>
-  </button>
+  <span
+    *ngIf="
+      authService.isLoggedIn && authService.getUser()?.emailVerified && myUser
+    "
+  >
+    <button mat-button>
+      <a href="">Home</a>
+    </button>
+    <button mat-button>
+      <a href="create-new-journal">Create New Journal</a>
+    </button>
+    <button mat-button>
+      <a href="http://">My Journal</a>
+    </button>
+    <button mat-button>
+      <a href="http://">Profile</a>
+    </button>
+    <button mat-button>
+      <a (click)="logOut()">Log Out</a>
+    </button></span
+  >
 </mat-toolbar>
 
 <div class="menutoggle">
@@ -31,6 +40,9 @@
     </button>
     <button mat-button>
       <a href="http://">Profile</a>
+    </button>
+    <button mat-button>
+      <a (click)="logOut()">Log Out</a>
     </button>
   </mat-toolbar>
 </div>

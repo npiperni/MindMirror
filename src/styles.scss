@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-snack-bar-container,
+.mdc-snackbar__label {
+
+  &.alert-snackbar {
+    --mdc-snackbar-container-color: red;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: white;
+    --mdc-snackbar-supporting-text-size: 20px;
+  }
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  font-size: 30px;
+}
