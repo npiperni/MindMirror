@@ -44,20 +44,8 @@ export class JournalService {
   async getFeed(user: UserDTO) {
     const db = getDatabase();
     const journalRef = ref(db, 'journal entries');
-    const snapshot = await get(journalRef);
-    const journalNodeExists = snapshot.exists();
 
-    if (!journalNodeExists) {
-      return false;
-    }
-
-    const userJournalQuery = query(
-      journalRef,
-      orderByChild('UserID'),
-      equalTo(user.ID)
-    );
-    const userJournalSnapshot = await get(userJournalQuery);
-    const userJournalEntries = userJournalSnapshot.val();
+    const userJournalEntries = this.getMyJournalEntries(user.ID);
 
     let friendJournalEntries = {};
     for (const friendID of user.Friends) {
