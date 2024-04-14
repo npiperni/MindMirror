@@ -9,4 +9,5 @@ export interface UserDTO {
   LastName: string;
   ID: string;
   Email: string;
+  Friends: string[];
 }

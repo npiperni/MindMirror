@@ -61,6 +61,7 @@ export class UserService {
       LastName: fullNameParts.slice(1).join(' '),
       ID: id,
       Email: value.email,
+      Friends: [],
     };
 
     set(ref(this.database, path + id), user);

@@ -14,10 +14,10 @@ import { UserDTO } from 'src/app/models/users';
     trigger('slideAnimation', [
       /* scale */
       transition('void => *', [
-        useAnimation(scaleIn, { params: { time: '1000ms' } }),
+        useAnimation(scaleIn, { params: { time: '500ms' } }),
       ]),
       transition('* => void', [
-        useAnimation(scaleOut, { params: { time: '1000ms' } }),
+        useAnimation(scaleOut, { params: { time: '500ms' } }),
       ]),
     ]),
   ],
