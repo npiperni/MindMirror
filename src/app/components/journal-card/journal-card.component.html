@@ -4,6 +4,9 @@
       <mat-card-title id="title" class="text">{{
         journal.Title
       }}</mat-card-title>
+      <mat-card-subtitle *ngIf="!isFromLanding" class="text"
+        ><h1>{{ journal.Privacy }}</h1></mat-card-subtitle
+      >
       <mat-card-subtitle *ngIf="isFromLanding" class="text">{{
         journal.Email
       }}</mat-card-subtitle>

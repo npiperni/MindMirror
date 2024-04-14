@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-my-journal',
   templateUrl: './my-journal.component.html',
-  styleUrls: ['./my-journal.component.scss']
+  styleUrls: ['./my-journal.component.scss'],
 })
 export class MyJournalComponent {
   myUser!: UserDTO;
@@ -34,6 +34,9 @@ export class MyJournalComponent {
       this.journalsArray = await this.journalService.getMyJournalEntries(
         this.myUser.ID
       );
+      this.journalsArray.sort((a, b) => {
+        return new Date(b.Date).getTime() - new Date(a.Date).getTime();
+      });
       this.loading = false;
     }
   }
