@@ -1,3 +1,12 @@
 <div class="out">
-    <h1>Mind Mirror</h1>
+  <h1>Mind Mirror</h1>
+</div>
+
+<app-journal-card
+  [myJournal]="myJournalsArray"
+  [isFromLanding]="true"
+></app-journal-card>
+
+<div class="loading-indicator" *ngIf="loading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
 </div>

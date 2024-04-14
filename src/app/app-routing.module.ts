@@ -16,11 +16,19 @@ const routes: Routes = [
     component: CreateNewJournalComponent,
     canActivate: [AuthguardGuard],
   },
-  { path: 'add-friend', component: AddFriendComponent},
+  {
+    path: 'add-friend',
+    component: AddFriendComponent,
+    canActivate: [AuthguardGuard],
+  },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'my-journal', component: MyJournalComponent},
+  {
+    path: 'my-journal',
+    component: MyJournalComponent,
+    canActivate: [AuthguardGuard],
+  },
   { path: '**', redirectTo: '' },
 ];
 

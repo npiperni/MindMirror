@@ -1,0 +1,47 @@
+<div class="my-journal-cards">
+  <form [formGroup]="editJournalForm" (ngSubmit)="onSubmit()">
+    <mat-card id="individual-journal-card" class="card-container">
+      <mat-card-header class="header-with-button">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field
+          class="title-field"
+          formControlName="mood"
+          appearance="fill"
+        >
+          <mat-label>Select Mood</mat-label>
+          <mat-select formControlName="mood">
+            <mat-option
+              *ngFor="let moodValue of moodEnumArray"
+              [value]="moodValue"
+            >
+              {{ moodValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-radio-group
+          class="privacy-options"
+          aria-label="Select privacy"
+          formControlName="privacy"
+        >
+          <mat-radio-button value="Private">Private</mat-radio-button>
+          <mat-radio-button value="Public">Public</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="fill">
+          <mat-label>Message</mat-label>
+          <textarea matInput formControlName="message"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="start">
+        <button mat-flat-button color="primary" type="submit">Save</button>
+        <button mat-flat-button color="warn" type="button" (click)="onCancel()">
+          Cancel
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

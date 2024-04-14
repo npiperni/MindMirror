@@ -37,23 +37,24 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './pages/login/login.component';
 import { AddFriendComponent } from './pages/add-friend/add-friend.component';
+import { EditJournalDialogComponent } from './components/edit-journal-dialog/edit-journal-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    
-    AppComponent, 
-   
-    LandingComponent, 
-   
-    HeaderComponent, 
-    JournalCardComponent, 
-    MyJournalComponent
-  ,
+    AppComponent,
+
+    LandingComponent,
+
+    HeaderComponent,
+    JournalCardComponent,
+    MyJournalComponent,
     CreateNewJournalComponent,
     SignUpComponent,
     VerifyEmailComponent,
     LoginComponent,
     AddFriendComponent,
+    EditJournalDialogComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -83,6 +84,7 @@ import { AddFriendComponent } from './pages/add-friend/add-friend.component';
     MatRadioModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

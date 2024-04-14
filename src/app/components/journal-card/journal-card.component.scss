@@ -1,23 +1,27 @@
-.my-journal-cards{
-    margin:auto;
-    width: 95%;
-    padding: 20px;
+.my-journal-cards {
+  margin: auto;
+  width: 95%;
+  padding: 20px;
 }
 
-#individual-journal-card{
-    background-color: #F4F0E8;
+mat-card {
+  margin: 20px;
+}
+
+#individual-journal-card {
+  background-color: #f4f0e8;
 }
 
 .header-with-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#title{
-    color: #301DAD;
+#title {
+  color: #301dad;
 }
 
-.text{
-    font-family: "Sanchez", serif;
+.text {
+  font-family: "Sanchez", serif;
 }
