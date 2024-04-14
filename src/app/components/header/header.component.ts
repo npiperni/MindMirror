@@ -23,7 +23,7 @@ import { UserDTO } from 'src/app/models/users';
   ],
 })
 export class HeaderComponent {
-  menu = true;
+  menu = false; // Menu is closed by default
   userSubscription: Subscription = new Subscription();
   myUser!: UserDTO;
 

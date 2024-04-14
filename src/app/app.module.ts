@@ -13,6 +13,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +24,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CreateNewJournalComponent } from './pages/create-new-journal/create-new-journal.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { firebaseConfig } from '../environment/environment';
@@ -57,9 +61,13 @@ import { LoginComponent } from './pages/login/login.component';
     MatButtonModule,
     MatExpansionModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

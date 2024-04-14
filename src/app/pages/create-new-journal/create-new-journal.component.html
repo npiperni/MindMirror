@@ -1,8 +1,30 @@
 <div class="container">
   <mat-card>
-    <mat-card-content>
-      <h2>Enter Title</h2>
-      <hr>
+    <mat-card-content class="card-content">
+      <div class="title-and-privacy">
+        <mat-form-field class="title-field" appearance="fill">
+          <input matInput placeholder="Enter Title" class="title-input" />
+        </mat-form-field>
+        <mat-radio-group
+          class="privacy-options"
+          aria-label="Select privacy"
+          [(ngModel)]="selectedPrivacy"
+        >
+          <mat-radio-button value="private">Private</mat-radio-button>
+          <mat-radio-button value="public">Public</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <hr />
+      <mat-form-field class="entry-field" appearance="fill">
+        <textarea
+          matInput
+          placeholder="Jot down your entry here..."
+          class="entry-input"
+        ></textarea>
+      </mat-form-field>
     </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button class="save-button">Save</button>
+    </mat-card-actions>
   </mat-card>
 </div>
