@@ -1,0 +1,28 @@
+<div class="my-journal-cards">
+  <mat-card *ngFor="let journal of myJournal" id="individual-journal-card">
+    <mat-card-header class="header-with-button">
+      <mat-card-title id="title" class="text">{{
+        journal.Title
+      }}</mat-card-title>
+      <mat-card-subtitle *ngIf="isFromLanding" class="text">{{
+        journal.Email
+      }}</mat-card-subtitle>
+      <mat-card-subtitle class="text">{{ journal.Mood }}</mat-card-subtitle>
+      <mat-card-subtitle class="text">{{
+        journal.Date | date : "yyyy-MM-dd"
+      }}</mat-card-subtitle>
+      <button
+        *ngIf="!isFromLanding"
+        mat-flat-button
+        color="primary"
+        (click)="editJournal(journal)"
+      >
+        Edit
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <br />
+      <p class="text">{{ journal.Message }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

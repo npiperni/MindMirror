@@ -1,0 +1,7 @@
+<h1>My Journal</h1>
+
+<app-journal-card [myJournal]="journalsArray"></app-journal-card>
+
+<div class="loading-indicator" *ngIf="loading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>

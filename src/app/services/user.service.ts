@@ -20,15 +20,13 @@ export class UserService {
   callSubscribeToUser() {
     return new Promise<void>((resolve) => {
       let myUser = this.authService.getUser() as User;
-      if (this.myUser) {
+      if (myUser) {
         const callback = (user: any) => {
-          this.myUser = user;
+          this.myUserSubject.next(user);
           resolve();
         };
 
-        if (myUser) {
-          this.subscribeToUser(myUser.uid, callback);
-        }
+        this.subscribeToUser(myUser.uid, callback);
       } else {
         resolve();
       }
@@ -82,7 +80,7 @@ export class UserService {
     }
   }
 
-  updateUser(user: UserDTO | null) {
+  async updateUser(user: UserDTO | null) {
     this.myUserSubject.next(user);
   }
 
@@ -93,7 +91,9 @@ export class UserService {
       const usersSnapshot = await get(usersRef);
       if (usersSnapshot.exists()) {
         const users = usersSnapshot.val();
-        const userId = Object.keys(users).find((key) => users[key].Email === email);
+        const userId = Object.keys(users).find(
+          (key) => users[key].Email === email
+        );
         if (userId) {
           const userRef = ref(db, `users/${userId}`);
           const userSnapshot = await get(userRef);

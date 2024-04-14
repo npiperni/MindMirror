@@ -39,7 +39,7 @@ export class LoginComponent {
           'User not found or account disabled'
         );
       } else {
-        this.userService.updateUser(myUser);
+        await this.userService.updateUser(myUser);
         this.router.navigate(['']);
       }
     }

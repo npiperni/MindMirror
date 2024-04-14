@@ -7,6 +7,13 @@
   padding: 0;
   margin: 0;
 
+  .title {
+    font-size: 2em;
+    color: #301DAD;
+    font-family: "Sanchez", serif;
+    margin-bottom: 20px;
+  }
+
   .title-and-privacy {
     display: flex;
     flex-direction: column;

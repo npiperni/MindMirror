@@ -43,6 +43,7 @@ export class CreateNewJournalComponent {
     if (this.journalForm.valid) {
       this.uploading = true;
       const journalEntry: Journal = {
+        JournalID: '',
         Message: this.journalForm.value.entry,
         Date: new Date().getTime(),
         Title: this.journalForm.value.title,

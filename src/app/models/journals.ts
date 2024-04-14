@@ -1,10 +1,21 @@
 export interface Journal {
+  JournalID: string;
   Message: string;
   Date: number;
   Title: string;
   Mood: MoodEnum;
   UserID: string;
   Privacy: PrivacyEnum;
+}
+
+export interface TempJournal {
+  Message: string;
+  Date: number;
+  Title: string;
+  Mood: MoodEnum;
+  UserID: string;
+  Privacy: PrivacyEnum;
+  Email: string;
 }
 
 export enum PrivacyEnum {
