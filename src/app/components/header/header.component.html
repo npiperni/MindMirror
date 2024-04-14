@@ -1,18 +1,57 @@
-<mat-toolbar>
-  <span>MindMirror</span>
+<mat-toolbar class="youpi">
+  <img class="logo-image" src="assets/logo.png" alt="MindMirror" />
+  <a href="" class="logo-link"><span>MindMirror</span></a>
   <span class="example-spacer"></span>
-  <button mat-button >
-    <a href="http://">Home</a>
-  </button>
-    <button mat-button >
-    <a href="http://">Create New Journal</a>
-  </button>
-    <button mat-button >
-    <a href="http://">My Journal</a>
+  <span
+    *ngIf="
+      authService.isLoggedIn && authService.getUser()?.emailVerified && myUser
+    "
+  >
+    <button mat-button>
+      <a class="nav-link" href="">Home</a>
     </button>
-    <button mat-button >
-    <a href="http://">Profile</a>
+    <button mat-button>
+      <a class="nav-link" href="create-new-journal">Create New Journal</a>
     </button>
+    <button mat-button>
+      <a class="nav-link" href="">My Journal</a>
+    </button>
+    <!-- <button mat-button>
+      <a class="nav-link" href="">Profile</a>
+    </button> -->
+    <button mat-button>
+      <a class="nav-link" href="add-friend">Add Friend</a>
+    </button>
+    <button mat-button>
+      <a class="nav-link" (click)="logOut()">Log Out</a>
+    </button></span
+  >
 </mat-toolbar>
 
-
+<div class="menutoggle">
+  <div class="phone-menu">
+    <img class="logo-image" src="assets/logo.png" alt="MindMirror" />
+    <a href="" class="logo-link"><span class="logo-text">MindMirror</span></a>
+    <mat-icon (click)="toggleMenu()">reorder</mat-icon>
+  </div>
+  <mat-toolbar class="menutoggle" *ngIf="menu" [@slideAnimation]>
+    <button mat-button>
+      <a class="nav-link" href="">Home</a>
+    </button>
+    <button mat-button>
+      <a class="nav-link" href="create-new-journal">Create New Journal</a>
+    </button>
+    <button mat-button>
+      <a class="nav-link" href="">My Journal</a>
+    </button>
+    <!-- <button mat-button>
+      <a class="nav-link" href="">Profile</a>
+    </button> -->
+    <button mat-button>
+      <a class="nav-link" href="add-friend">Add Friend</a>
+    </button>
+    <button mat-button>
+      <a class="nav-link" (click)="logOut()">Log Out</a>
+    </button>
+  </mat-toolbar>
+</div>
