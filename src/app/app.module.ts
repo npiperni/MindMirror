@@ -32,6 +32,7 @@ import { VerifyEmailComponent } from './pages/verify-email/verify-email.componen
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './pages/login/login.component';
+import { AddFriendComponent } from './pages/add-friend/add-friend.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { LoginComponent } from './pages/login/login.component';
     SignUpComponent,
     VerifyEmailComponent,
     LoginComponent,
+    AddFriendComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
