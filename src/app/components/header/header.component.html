@@ -29,7 +29,13 @@
   <div class="phone-menu">
     <img class="logo-image" src="assets/logo.png" alt="MindMirror" />
     <a href="" class="logo-link"><span class="logo-text">MindMirror</span></a>
-    <mat-icon (click)="toggleMenu()">reorder</mat-icon>
+    <mat-icon
+      *ngIf="
+        authService.isLoggedIn && authService.getUser()?.emailVerified && myUser
+      "
+      (click)="toggleMenu()"
+      >reorder</mat-icon
+    >
   </div>
   <mat-toolbar class="menutoggle" *ngIf="menu" [@slideAnimation]>
     <button mat-button>

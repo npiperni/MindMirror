@@ -46,6 +46,7 @@ export class HeaderComponent {
    * Logs out the current user.
    */
   async logOut() {
+    this.toggleMenu();
     this.userService.updateUser(null);
     await this.authService.SignOut();
   }
