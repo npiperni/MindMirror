@@ -61,6 +61,7 @@ export class UserService {
       LastName: fullNameParts.slice(1).join(' '),
       ID: id,
       Email: value.email,
+      Friends: [],
     };
 
     set(ref(this.database, path + id), user);
@@ -83,5 +84,40 @@ export class UserService {
 
   updateUser(user: UserDTO | null) {
     this.myUserSubject.next(user);
+  }
+
+  async getUserByEmail(email: string): Promise<UserDTO | null> {
+    try {
+      const db = getDatabase();
+      const usersRef = ref(db, 'users');
+      const usersSnapshot = await get(usersRef);
+      if (usersSnapshot.exists()) {
+        const users = usersSnapshot.val();
+        const userId = Object.keys(users).find((key) => users[key].Email === email);
+        if (userId) {
+          const userRef = ref(db, `users/${userId}`);
+          const userSnapshot = await get(userRef);
+          if (userSnapshot.exists()) {
+            return userSnapshot.val() as UserDTO;
+          }
+        }
+      }
+      return null;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async addFriend(userId: string, friendId: string) {
+    try {
+      const user = await this.getUser(userId);
+      if (user) {
+        user.Friends = user.Friends || [];
+        user.Friends.push(friendId);
+        set(ref(this.database, `users/${userId}`), user);
+      }
+    } catch (error) {
+      throw error;
+    }
   }
 }
