@@ -11,8 +11,20 @@
             required
           />
         </mat-form-field>
-        <mat-form-field class="title-field" appearance="fill">
-          <input matInput placeholder="Enter Mood" formControlName="mood" />
+        <mat-form-field
+          class="title-field"
+          formControlName="mood"
+          appearance="fill"
+        >
+          <mat-label>Select Mood</mat-label>
+          <mat-select formControlName="mood">
+            <mat-option
+              *ngFor="let moodValue of moodEnumArray"
+              [value]="moodValue"
+            >
+              {{ moodValue }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-radio-group
           class="privacy-options"

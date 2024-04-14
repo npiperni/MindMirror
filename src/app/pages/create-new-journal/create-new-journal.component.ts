@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Journal } from 'src/app/models/journals';
+import { Journal, MoodEnum } from 'src/app/models/journals';
 import { UserDTO } from 'src/app/models/users';
 import { JournalService } from 'src/app/services/journal.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -17,6 +17,7 @@ export class CreateNewJournalComponent {
   myUser!: UserDTO;
   userSubscription: Subscription = new Subscription();
   uploading = false;
+  moodEnumArray = Object.values(MoodEnum);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,7 +29,7 @@ export class CreateNewJournalComponent {
   async ngOnInit() {
     this.journalForm = this.formBuilder.group({
       title: ['', Validators.required],
-      mood: [''],
+      mood: [MoodEnum.Happy, Validators.required],
       privacy: ['Private', Validators.required],
       entry: ['', Validators.required],
     });
