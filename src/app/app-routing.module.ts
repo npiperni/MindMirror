@@ -6,6 +6,7 @@ import { CreateNewJournalComponent } from './pages/create-new-journal/create-new
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthguardGuard } from './guards/auth.guard';
+import { AddFriendComponent } from './pages/add-friend/add-friend.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, canActivate: [AuthguardGuard] },
@@ -14,6 +15,7 @@ const routes: Routes = [
     component: CreateNewJournalComponent,
     canActivate: [AuthguardGuard],
   },
+  { path: 'add-friend', component: AddFriendComponent},
   { path: 'sign-up', component: SignUpComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'login', component: LoginComponent },
