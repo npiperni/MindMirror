@@ -40,7 +40,7 @@ export class AddFriendComponent {
       this.email = '';
       return;
     }
-    if (this.myUser.Friends.includes(friend.ID)) {
+    if (this.myUser.Friends?.includes(friend.ID)) {
       this.notificationService.sendAlert('User is already your friend');
       this.email = '';
       return;
