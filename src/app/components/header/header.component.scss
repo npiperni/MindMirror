@@ -26,7 +26,23 @@ a {
   }
 }
 
-@media screen and (max-width: 600px) {
+.logo-image {
+  width: 100px;
+  height: 50px;
+}
+
+.phone-menu {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  mat-icon {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 950px) {
   .menutoggle {
     display: flex;
   }

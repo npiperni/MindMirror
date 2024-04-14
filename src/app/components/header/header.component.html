@@ -1,23 +1,35 @@
 <mat-toolbar class="youpi">
+  <img class="logo-image" src="assets/logo.png" alt="MindMirror" />
   <span>MindMirror</span>
   <span class="example-spacer"></span>
-  <button mat-button>
-    <a href="">Home</a>
-  </button>
-  <button mat-button>
-    <a href="create-new-journal">Create New Journal</a>
-  </button>
-  <button mat-button>
-    <a href="http://">My Journal</a>
-  </button>
-  <button mat-button>
-    <a href="http://">Profile</a>
-  </button>
+  <span
+    *ngIf="
+      authService.isLoggedIn && authService.getUser()?.emailVerified && myUser
+    "
+  >
+    <button mat-button>
+      <a href="">Home</a>
+    </button>
+    <button mat-button>
+      <a href="create-new-journal">Create New Journal</a>
+    </button>
+    <button mat-button>
+      <a href="">My Journal</a>
+    </button>
+    <button mat-button>
+      <a href="">Profile</a>
+    </button>
+    <button mat-button>
+      <a (click)="logOut()">Log Out</a>
+    </button></span
+  >
 </mat-toolbar>
 
 <div class="menutoggle">
-  <mat-icon (click)="toggleMenu()">reorder</mat-icon>
-
+  <div class="phone-menu">
+    <img class="logo-image" src="assets/logo.png" alt="MindMirror" />
+    <mat-icon (click)="toggleMenu()">reorder</mat-icon>
+  </div>
   <mat-toolbar class="menutoggle" *ngIf="menu" [@slideAnimation]>
     <span>MindMirror</span>
     <button mat-button>
@@ -27,10 +39,13 @@
       <a href="create-new-journal">Create New Journal</a>
     </button>
     <button mat-button>
-      <a href="http://">My Journal</a>
+      <a href="">My Journal</a>
     </button>
     <button mat-button>
-      <a href="http://">Profile</a>
+      <a href="">Profile</a>
+    </button>
+    <button mat-button>
+      <a (click)="logOut()">Log Out</a>
     </button>
   </mat-toolbar>
 </div>
