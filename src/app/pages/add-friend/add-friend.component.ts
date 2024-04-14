@@ -31,7 +31,7 @@ export class AddFriendComponent {
     }
     try {
       await this.userService.addFriend(uid, friend.ID);
-      alert('Friend added');
+      this.notificationService.sendNotification('Friend added');
     } catch (error) {
       this.notificationService.sendAlert('Failed to add friend');
     }
