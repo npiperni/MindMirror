@@ -39,6 +39,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AddFriendComponent } from './pages/add-friend/add-friend.component';
 import { EditJournalDialogComponent } from './components/edit-journal-dialog/edit-journal-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteJournalDialogComponent } from './components/delete-journal-dialog/delete-journal-dialog.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     AddFriendComponent,
     EditJournalDialogComponent,
+    DeleteJournalDialogComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),

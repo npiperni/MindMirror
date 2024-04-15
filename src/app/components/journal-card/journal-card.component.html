@@ -14,14 +14,26 @@
       <mat-card-subtitle class="text">{{
         journal.Date | date : "yyyy-MM-dd"
       }}</mat-card-subtitle>
-      <button
-        *ngIf="!isFromLanding"
-        mat-flat-button
-        color="primary"
-        (click)="editJournal(journal)"
-      >
-        Edit
-      </button>
+      <div class="buttons">
+        <!--Edit Button-->
+        <button
+          *ngIf="!isFromLanding"
+          mat-flat-button
+          color="primary"
+          (click)="editJournal(journal)"
+        >
+          Edit
+        </button>
+        <!--Delete Button-->
+        <button 
+          *ngIf="!isFromLanding"
+          mat-fab 
+          color="warn" 
+          (click)="deleteJournal(journal)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </mat-card-header>
     <mat-card-content>
       <br />
