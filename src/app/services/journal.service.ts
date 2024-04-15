@@ -52,6 +52,9 @@ export class JournalService {
     const journalRef = ref(db, 'journal entries');
 
     const userJournalEntries = await this.getMyJournalEntries(user.ID);
+    const publicUserJournalEntries = userJournalEntries
+      .map((entry) => entry as Journal)
+      .filter((journal) => journal.Privacy === PrivacyEnum.Public);
 
     let friendJournalEntries: Journal[] = [];
     if (user.Friends) {
@@ -73,7 +76,7 @@ export class JournalService {
       }
     }
 
-    return [...userJournalEntries, ...friendJournalEntries];
+    return [...publicUserJournalEntries, ...friendJournalEntries];
   }
 
   async editJournalEntry(originalEntry: Journal, updatedEntry: Journal) {
@@ -87,12 +90,7 @@ export class JournalService {
 
   async deleteJournalEntry(entry: Journal) {
     const db = getDatabase();
-    const journalRef = ref(
-      db,
-      'journal entries/' + entry.JournalID
-    );
+    const journalRef = ref(db, 'journal entries/' + entry.JournalID);
     await remove(journalRef);
   }
-
-
 }
