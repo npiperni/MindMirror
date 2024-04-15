@@ -43,7 +43,14 @@
       />
     </div>
     <div class="button-container">
-      <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!signupForm.valid"
+      >
+        Sign Up
+      </button>
       <p class="login-link">
         Already have an account? <a routerLink="/login">Log in</a>
       </p>

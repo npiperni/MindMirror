@@ -22,7 +22,14 @@
       />
     </div>
     <div class="button-container">
-      <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Log In
+      </button>
       <p class="signup-link">
         Don't have an account? <a routerLink="/sign-up">Sign up</a>
       </p>
