@@ -25,7 +25,12 @@
           Edit
         </button>
         <!--Delete Button-->
-        <button mat-fab color="warn" (click)="deleteJournal(journal)">
+        <button 
+          *ngIf="!isFromLanding"
+          mat-fab 
+          color="warn" 
+          (click)="deleteJournal(journal)"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </div>

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditJournalDialogComponent } from '../edit-journal-dialog/edit-journal-dialog.component';
+import { DeleteJournalDialogComponent } from '../delete-journal-dialog/delete-journal-dialog.component';
 import { JournalService } from 'src/app/services/journal.service';
 import { UserDTO } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user.service';
@@ -51,9 +52,19 @@ export class JournalCardComponent {
   }
 
   async deleteJournal(journal: any) {
-    await this.journalService.deleteJournalEntry(journal);
-    this.notificationService.sendNotification('Journal entry successfully deleted!');
-    window.location.reload();
+    const dialogRef = this.dialog.open(DeleteJournalDialogComponent, {
+      width: '500px',
+      data: { journal },
+    });
+    dialogRef.afterClosed().subscribe(async (result)=>{
+      if (result){
+        /**Delete logic */
+      await this.journalService.deleteJournalEntry(journal);
+      this.notificationService.sendNotification('Journal entry successfully deleted!');
+      window.location.reload();
+      }
+    })
+    
   }
 
 }

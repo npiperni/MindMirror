@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Delete</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        Are you sure you want to delete the journal? This action cannot be undone.
+        <br>
+        <div class="button-container">
+            <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+            <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+        </div>
+        
+    </mat-card-content>
+    
+</mat-card>
