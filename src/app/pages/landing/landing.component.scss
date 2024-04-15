@@ -5,7 +5,18 @@
   margin-top: 0;
   height: 20vh;
   padding: 3vw;
+  
+  
 }
+
+.image {
+  background-image: url("https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-size: cover; 
+  background-position: center; 
+  text-align: center; 
+  width: 83vw;
+}
+
 h1 {
   font-size: 5em;
   font-weight: 600;

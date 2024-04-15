@@ -8,6 +8,7 @@ import {
   orderByChild,
   query,
   ref,
+  remove,
   update,
 } from 'firebase/database';
 import { UserDTO } from '../models/users';
@@ -83,4 +84,15 @@ export class JournalService {
     );
     await update(originalJournalRef, updatedEntry);
   }
+
+  async deleteJournalEntry(entry: Journal) {
+    const db = getDatabase();
+    const journalRef = ref(
+      db,
+      'journal entries/' + entry.JournalID
+    );
+    await remove(journalRef);
+  }
+
+
 }

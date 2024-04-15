@@ -5,6 +5,7 @@ import { JournalService } from 'src/app/services/journal.service';
 import { UserDTO } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user.service';
 import { Subscription } from 'rxjs';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-journal-card',
@@ -20,7 +21,8 @@ export class JournalCardComponent {
   constructor(
     public dialog: MatDialog,
     private journalService: JournalService,
-    private userService: UserService
+    private userService: UserService,
+    private notificationService: NotificationService
   ) {}
 
   async ngOnInit() {
@@ -47,4 +49,11 @@ export class JournalCardComponent {
       }
     });
   }
+
+  async deleteJournal(journal: any) {
+    await this.journalService.deleteJournalEntry(journal);
+    this.notificationService.sendNotification('Journal entry successfully deleted!');
+    window.location.reload();
+  }
+
 }
