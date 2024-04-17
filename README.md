@@ -1,5 +1,9 @@
 # MindMirror
 
+## Demo video
+
+[https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
 ## Development server
