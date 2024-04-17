@@ -2,7 +2,13 @@
 
 ## Demo video
 
-[https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
+Note that the google drive link's video has a better quality than the Youtube version.
+
+Google Drive [https://drive.google.com/file/d/1Y1pDpOXsSq-P57nsJ7LjWLAOhro0RqGg/view?usp=sharing](https://drive.google.com/file/d/1Y1pDpOXsSq-P57nsJ7LjWLAOhro0RqGg/view?usp=sharing)
+
+Youtube: [https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
+
+## Project information
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
