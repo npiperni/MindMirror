@@ -1,5 +1,9 @@
 # MindMirror
 
+## Deployed Website
+
+Instead of running the code locally, you can use the deployed version of our project using the following link: [https://mindmirror-d7385.web.app/login](https://mindmirror-d7385.web.app/login)
+
 ## Demo video
 
 Youtube: [https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
@@ -9,6 +13,28 @@ Google Drive [https://drive.google.com/file/d/1Y1pDpOXsSq-P57nsJ7LjWLAOhro0RqGg/
 ## Project information
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+
+## How to run the code
+
+### Prerequisites
+Angular CLI: 15.1.2
+
+Node: 18.19.0
+
+Package Manager: npm 10.2.3
+
+OS: win32 x64
+
+
+### Steps
+1- Clone the repository and open it in VSCode
+
+2- Open the terminal and run the command `npm i`
+
+3- Run the command `ng s --o`
+
+4- The page will open automatically in your browser
+
 
 ## Development server
 
