@@ -2,11 +2,9 @@
 
 ## Demo video
 
-Note that the google drive link's video has a better quality than the Youtube version.
+Youtube: [https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
 
 Google Drive [https://drive.google.com/file/d/1Y1pDpOXsSq-P57nsJ7LjWLAOhro0RqGg/view?usp=sharing](https://drive.google.com/file/d/1Y1pDpOXsSq-P57nsJ7LjWLAOhro0RqGg/view?usp=sharing)
-
-Youtube: [https://www.youtube.com/watch?v=tJYLt0vFI6Y](https://www.youtube.com/watch?v=tJYLt0vFI6Y)
 
 ## Project information
 
